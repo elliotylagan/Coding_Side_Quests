@@ -1,0 +1,150 @@
+type_to_num = {"Normal": 0, "Fire": 1, "Water": 2, "Grass": 3, "Electric": 4, "Ice": 5, "Fighting": 6, "Poison": 7, "Ground": 8, "Flying": 9, "Psychic": 10, "Bug": 11, "Rock": 12, "Ghost": 13, "Dragon": 14, "Dark": 15, "Steel": 16, "Fairy": 17}
+
+
+def set_matrix():
+    matrix = [["-" for i in range(18)] for j in range(18)]
+
+    matrix[type_to_num["Normal"]][type_to_num["Rock"]] = 0.5    
+    matrix[type_to_num["Normal"]][type_to_num["Ghost"]] = 0
+    matrix[type_to_num["Normal"]][type_to_num["Steel"]] = 0.5
+
+    matrix[type_to_num["Fire"]][type_to_num["Water"]] = 0.5
+    matrix[type_to_num["Fire"]][type_to_num["Fire"]] = 0.5
+    matrix[type_to_num["Fire"]][type_to_num["Grass"]] = 2
+    matrix[type_to_num["Fire"]][type_to_num["Ice"]] = 2
+    matrix[type_to_num["Fire"]][type_to_num["Bug"]] = 2
+    matrix[type_to_num["Fire"]][type_to_num["Rock"]] = 0.5
+    matrix[type_to_num["Fire"]][type_to_num["Dragon"]] = 0.5
+    matrix[type_to_num["Fire"]][type_to_num["Steel"]] = 2
+
+    matrix[type_to_num["Water"]][type_to_num["Water"]] = 0.5
+    matrix[type_to_num["Water"]][type_to_num["Fire"]] = 2
+    matrix[type_to_num["Water"]][type_to_num["Grass"]] = 0.5
+    matrix[type_to_num["Water"]][type_to_num["Ground"]] = 2
+    matrix[type_to_num["Water"]][type_to_num["Rock"]] = 2
+    matrix[type_to_num["Water"]][type_to_num["Dragon"]] = 0.5
+
+    matrix[type_to_num["Grass"]][type_to_num["Fire"]] = 0.5
+    matrix[type_to_num["Grass"]][type_to_num["Water"]] = 2
+    matrix[type_to_num["Grass"]][type_to_num["Grass"]] = 0.5  
+    matrix[type_to_num["Grass"]][type_to_num["Poison"]] = 0.5
+    matrix[type_to_num["Grass"]][type_to_num["Ground"]] = 2
+    matrix[type_to_num["Grass"]][type_to_num["Flying"]] = 0.5
+    matrix[type_to_num["Grass"]][type_to_num["Bug"]] = 0.5
+    matrix[type_to_num["Grass"]][type_to_num["Rock"]] = 2
+    matrix[type_to_num["Grass"]][type_to_num["Dragon"]] = 0.5
+    matrix[type_to_num["Grass"]][type_to_num["Steel"]] = 0.5
+
+    matrix[type_to_num["Electric"]][type_to_num["Electric"]] = 0.5
+    matrix[type_to_num["Electric"]][type_to_num["Water"]] = 2
+    matrix[type_to_num["Electric"]][type_to_num["Grass"]] = 0.5
+    matrix[type_to_num["Electric"]][type_to_num["Ground"]] = 0
+    matrix[type_to_num["Electric"]][type_to_num["Flying"]] = 2
+    matrix[type_to_num["Electric"]][type_to_num["Dragon"]] = 0.5
+
+    matrix[type_to_num["Ice"]][type_to_num["Fire"]] = 0.5
+    matrix[type_to_num["Ice"]][type_to_num["Water"]] = 0.5  
+    matrix[type_to_num["Ice"]][type_to_num["Grass"]] = 2
+    matrix[type_to_num["Ice"]][type_to_num["Ice"]] = 0.5
+    matrix[type_to_num["Ice"]][type_to_num["Ground"]] = 2
+    matrix[type_to_num["Ice"]][type_to_num["Flying"]] = 2
+    matrix[type_to_num["Ice"]][type_to_num["Dragon"]] = 2
+    matrix[type_to_num["Ice"]][type_to_num["Steel"]] = 0.5
+
+    matrix[type_to_num["Fighting"]][type_to_num["Normal"]] = 2
+    matrix[type_to_num["Fighting"]][type_to_num["Ice"]] = 2
+    matrix[type_to_num["Fighting"]][type_to_num["Poison"]] = 0.5
+    matrix[type_to_num["Fighting"]][type_to_num["Flying"]] = 0.5
+    matrix[type_to_num["Fighting"]][type_to_num["Psychic"]] = 0.5
+    matrix[type_to_num["Fighting"]][type_to_num["Bug"]] = 0.5
+    matrix[type_to_num["Fighting"]][type_to_num["Rock"]] = 2
+    matrix[type_to_num["Fighting"]][type_to_num["Ghost"]] = 0
+    matrix[type_to_num["Fighting"]][type_to_num["Dark"]] = 2
+    matrix[type_to_num["Fighting"]][type_to_num["Steel"]] = 2
+    matrix[type_to_num["Fighting"]][type_to_num["Fairy"]] = 0.5
+
+    matrix[type_to_num["Poison"]][type_to_num["Grass"]] = 2
+    matrix[type_to_num["Poison"]][type_to_num["Poison"]] = 0.5
+    matrix[type_to_num["Poison"]][type_to_num["Ground"]] = 0.5
+    matrix[type_to_num["Poison"]][type_to_num["Rock"]] = 0.5
+    matrix[type_to_num["Poison"]][type_to_num["Ghost"]] = 0.5
+    matrix[type_to_num["Poison"]][type_to_num["Steel"]] = 0
+    matrix[type_to_num["Poison"]][type_to_num["Fairy"]] = 2
+    
+    matrix[type_to_num["Ground"]][type_to_num["Fire"]] = 2
+    matrix[type_to_num["Ground"]][type_to_num["Electric"]] = 2
+    matrix[type_to_num["Ground"]][type_to_num["Grass"]] = 0.5
+    matrix[type_to_num["Ground"]][type_to_num["Poison"]] = 2
+    matrix[type_to_num["Ground"]][type_to_num["Flying"]] = 0
+    matrix[type_to_num["Ground"]][type_to_num["Bug"]] = 0.5
+    matrix[type_to_num["Ground"]][type_to_num["Rock"]] = 2
+    matrix[type_to_num["Ground"]][type_to_num["Steel"]] = 2
+    
+    matrix[type_to_num["Flying"]][type_to_num["Electric"]] = 0.5
+    matrix[type_to_num["Flying"]][type_to_num["Grass"]] = 2
+    matrix[type_to_num["Flying"]][type_to_num["Fighting"]] = 2
+    matrix[type_to_num["Flying"]][type_to_num["Bug"]] = 2
+    matrix[type_to_num["Flying"]][type_to_num["Rock"]] = 0.5
+    matrix[type_to_num["Flying"]][type_to_num["Steel"]] = 0.5
+
+    matrix[type_to_num["Psychic"]][type_to_num["Fighting"]] = 2
+    matrix[type_to_num["Psychic"]][type_to_num["Poison"]] = 2
+    matrix[type_to_num["Psychic"]][type_to_num["Psychic"]] = 0.5
+    matrix[type_to_num["Psychic"]][type_to_num["Dark"]] = 0
+    matrix[type_to_num["Psychic"]][type_to_num["Steel"]] = 0.5
+
+    matrix[type_to_num["Bug"]][type_to_num["Fire"]] = 0.5
+    matrix[type_to_num["Bug"]][type_to_num["Grass"]] = 2
+    matrix[type_to_num["Bug"]][type_to_num["Fighting"]] = 0.5
+    matrix[type_to_num["Bug"]][type_to_num["Poison"]] = 0.5
+    matrix[type_to_num["Bug"]][type_to_num["Flying"]] = 0.5
+    matrix[type_to_num["Bug"]][type_to_num["Psychic"]] = 2
+    matrix[type_to_num["Bug"]][type_to_num["Ghost"]] = 0.5
+    matrix[type_to_num["Bug"]][type_to_num["Dark"]] = 2
+    matrix[type_to_num["Bug"]][type_to_num["Steel"]] = 0.5
+    matrix[type_to_num["Bug"]][type_to_num["Fairy"]] = 0.5
+
+    matrix[type_to_num["Rock"]][type_to_num["Fire"]] = 2
+    matrix[type_to_num["Rock"]][type_to_num["Ice"]] = 2
+    matrix[type_to_num["Rock"]][type_to_num["Fighting"]] = 0.5
+    matrix[type_to_num["Rock"]][type_to_num["Ground"]] = 0.5
+    matrix[type_to_num["Rock"]][type_to_num["Flying"]] = 2
+    matrix[type_to_num["Rock"]][type_to_num["Bug"]] = 2
+    matrix[type_to_num["Rock"]][type_to_num["Steel"]] = 0.5
+
+    matrix[type_to_num["Ghost"]][type_to_num["Normal"]] = 0
+    matrix[type_to_num["Ghost"]][type_to_num["Psychic"]] = 2
+    matrix[type_to_num["Ghost"]][type_to_num["Ghost"]] = 2
+    matrix[type_to_num["Ghost"]][type_to_num["Dark"]] = 0.5
+    
+    matrix[type_to_num["Dragon"]][type_to_num["Dragon"]] = 2
+    matrix[type_to_num["Dragon"]][type_to_num["Steel"]] = 0.5
+    matrix[type_to_num["Dragon"]][type_to_num["Fairy"]] = 0
+    
+    matrix[type_to_num["Dark"]][type_to_num["Fighting"]] = 0.5
+    matrix[type_to_num["Dark"]][type_to_num["Psychic"]] = 2
+    matrix[type_to_num["Dark"]][type_to_num["Ghost"]] = 2
+    matrix[type_to_num["Dark"]][type_to_num["Dark"]] = 0.5
+    matrix[type_to_num["Dark"]][type_to_num["Fairy"]] = 0.5
+
+    matrix[type_to_num["Steel"]][type_to_num["Fire"]] = 0.5
+    matrix[type_to_num["Steel"]][type_to_num["Water"]] = 0.5
+    matrix[type_to_num["Steel"]][type_to_num["Electric"]] = 0.5
+    matrix[type_to_num["Steel"]][type_to_num["Ice"]] = 2
+    matrix[type_to_num["Steel"]][type_to_num["Rock"]] = 2
+    matrix[type_to_num["Steel"]][type_to_num["Steel"]] = 0.5
+    matrix[type_to_num["Steel"]][type_to_num["Fairy"]] = 2
+
+    matrix[type_to_num["Fairy"]][type_to_num["Fire"]] = 0.5
+    matrix[type_to_num["Fairy"]][type_to_num["Fighting"]] = 2
+    matrix[type_to_num["Fairy"]][type_to_num["Poison"]] = 0.5
+    matrix[type_to_num["Fairy"]][type_to_num["Dragon"]] = 2
+    matrix[type_to_num["Fairy"]][type_to_num["Dark"]] = 2
+    matrix[type_to_num["Fairy"]][type_to_num["Steel"]] = 0.5
+
+
+    return matrix
+
+matrix = set_matrix()
+for row in range(len(matrix)):
+    print( type_to_num.keys()[type_to_num.values().index(row)] )
